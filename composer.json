@@ -1,0 +1,21 @@
+{
+    "name": "omicronsoft/yii2-owl-carousel",
+    "description": "Simple owl carousel widget for yii2 ",
+    "type": "yii2-extension",
+    "keywords": ["owl","owl-carousel","widget","assetBundle","yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guga Grigolia",
+            "email": "grigolia.guga@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "omicronsoft\\owlcarousel\\": ""
+        }
+    }
+}
