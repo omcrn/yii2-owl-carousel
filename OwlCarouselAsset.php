@@ -16,13 +16,16 @@ use yii\web\AssetBundle;
  */
 class OwlCarouselAsset extends AssetBundle
 {
-    public $basePath = '@vendor/omicronsoft/yii2-owl-carousel/assets';
+    public $basePath = '@vendor/bower/owl.carousel/dist';
     public $baseUrl = '@web';
 
 
+    public $css = [
+        'assets/owl.carousel.min.css'
+    ];
 
     public $js = [
-        'js/owl.carousel.min.js',
+        'owl.carousel.min.js',
     ];
 
     public $depends = [
