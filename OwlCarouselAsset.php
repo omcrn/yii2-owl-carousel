@@ -10,26 +10,24 @@ namespace omicronsoft\owlcarousel;
 
 use yii\web\AssetBundle;
 
+
 /**
  * @author
  * @since 2.0
  */
 class OwlCarouselAsset extends AssetBundle
 {
-    public $basePath = '@vendor/bower/owl.carousel/dist';
-    public $baseUrl = '@web';
-
-
-    public $css = [
-        'assets/owl.carousel.min.css'
-    ];
-
+    public $sourcePath = '@bower/owl.carousel/dist';
     public $js = [
         'owl.carousel.min.js',
     ];
 
-    public $depends = [
-        'frontend\assets\FrontendAsset'
+    public $css = [
+        'assets/owl.carousel.min.css',
+    ];
+
+    public $depends=[
+        'yii\web\JqueryAsset'
     ];
 
 }
