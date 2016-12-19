@@ -156,9 +156,9 @@ class OwlCarouselWidget extends Widget
             'loop' => true,
             'smartSpeed' => 500,
             'navSpeed' => 1000,
-            'items' => 1,
+            'items' => 4,
             'nav' => true,
-            'navText' => ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+            'navText' => ["<span>prev <i class='fa fa-angle-left'></i></span>", "<span>next<i class='fa fa-angle-right'></i></span>"]
         ];
     }
 
