@@ -1,5 +1,5 @@
 {
-    "name": "omicronsoft/yii2-owl-carousel",
+    "name": "omcrn/yii2-owl-carousel",
     "description": "Simple owl carousel widget for yii2 ",
     "type": "yii2-extension",
     "keywords": ["owl","owl-carousel","widget","assetBundle","yii2","extension"],
