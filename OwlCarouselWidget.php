@@ -39,6 +39,9 @@ class OwlCarouselWidget extends Widget
     public $imgOptions = [];
 
     public $clientOptions = [];
+
+    public $assets = 'simple';
+
     /**
      * @var array
      */
@@ -134,6 +137,17 @@ class OwlCarouselWidget extends Widget
         }
 
         $view = $this->getView();
+        switch ($this->assets){
+            case 'simple':
+                OwlCarouselAsset::register($view);
+                break;
+            case 'themed':
+                OwlCarouselThemedAsset::register($view);
+                break;
+            default:
+                OwlCarouselAsset::register($view);
+                break;
+        }
 
 
 
