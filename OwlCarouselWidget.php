@@ -82,7 +82,11 @@ class OwlCarouselWidget extends Widget
 
     protected function renderItems()
     {
-        $this->options = ArrayHelper::merge($this->options, ['class' => 'owl-carousel']);
+        if($this->options && !$this->options['class']){
+            $this->options = ArrayHelper::merge($this->options, ['class' => 'owl-carousel']);
+        }else if(!$this->options){
+            $this->options = ['class' => 'owl-carousel'];
+        }
 
         $items = [];
         foreach ($this->items as $index => $item) {
@@ -143,7 +147,6 @@ class OwlCarouselWidget extends Widget
 
 
             $js = "$('#$id').$name($options);";
-
 
             $view->registerJs($js);
         }
