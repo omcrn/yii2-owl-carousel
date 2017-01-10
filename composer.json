@@ -1,22 +1,38 @@
 {
-    "name": "omcrn/yii2-owl-carousel",
-    "description": "Simple owl carousel widget for yii2 ",
-    "type": "yii2-extension",
-    "keywords": ["owl","owl-carousel","widget","assetBundle","yii2","extension"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Guga Grigolia",
-            "email": "grigolia.guga@gmail.com"
-        }
-    ],
-    "require": {
-        "yiisoft/yii2": "*",
-        "bower-asset/owl.carousel": "^v2.0.0"
+  "name": "omcrn/yii2-owl-carousel",
+  "description": "Simple owl carousel widget for yii2 ",
+  "type": "yii2-extension",
+  "keywords": [
+    "owl",
+    "owl-carousel",
+    "widget",
+    "assetBundle",
+    "yii2",
+    "extension"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Guga Grigolia",
+      "email": "grigolia.guga@gmail.com"
     },
-    "autoload": {
-        "psr-4": {
-            "omicronsoft\\owlcarousel\\": ""
-        }
+    {
+      "name": "Zura Sekhniashvili",
+      "email": "zurasekhniashvili@gmail.com"
     }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "bower-asset/owl.carousel1": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "omicronsoft\\owlcarousel\\": ""
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  }
 }
