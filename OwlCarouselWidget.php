@@ -8,6 +8,7 @@
  */
 namespace omicronsoft\owlcarousel;
 
+use Closure;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Widget;
@@ -57,8 +58,7 @@ class OwlCarouselWidget extends Widget
 
 
         foreach ($this->items as $index => &$item) {
-
-            if (isset($item['caption'])) {
+            if (isset($item['caption']) && $item['content']) {
                 $item['content'] = Html::tag('div', $item['caption'] . Html::img($item['img'], $this->imgOptions));
             }else if (isset($item['img'])) {
                 $item['content'] = Html::img($item['img'], $this->imgOptions);
@@ -111,45 +111,33 @@ class OwlCarouselWidget extends Widget
         if ($this->itemView === null) {
             $content = $model['content'];
         } elseif (is_string($this->itemView)) {
-            $content = $this->getView()->render($this->itemView, array_merge([
+            $content = $this->getView()->render($this->itemView, [
                 'model' => $model,
                 'index' => $index,
                 'widget' => $this,
-            ], $this->viewParams));
+            ]);
         } else {
             $content = call_user_func($this->itemView, $model, $index, $this);
         }
+
         if ($this->itemOptions instanceof Closure) {
             $options = call_user_func($this->itemOptions, $model, $index, $this);
         } else {
             $options = $this->itemOptions;
         }
+
         $tag = ArrayHelper::remove($options, 'tag', 'div');
         return Html::tag($tag, $content, $options);
     }
 
     protected function registerPlugin()
     {
-
-
         if (!isset($this->options['id'])) {
             $this->options['id'] = $this->getId();
         }
 
         $view = $this->getView();
-        switch ($this->assets){
-            case 'simple':
-                OwlCarouselAsset::register($view);
-                break;
-            case 'themed':
-                OwlCarouselThemedAsset::register($view);
-                break;
-            default:
-                OwlCarouselAsset::register($view);
-                break;
-        }
-
-
+        OwlCarouselAsset::register($view);
 
         $id = $this->options['id'];
 
@@ -158,7 +146,6 @@ class OwlCarouselWidget extends Widget
             $this->getClientOptions();
 
             $options = empty($this->clientOptions) ? '' : Json::encode($this->clientOptions);
-
 
             $js = "$('#$id').$name($options);";
 
