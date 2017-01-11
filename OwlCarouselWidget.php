@@ -56,7 +56,6 @@ class OwlCarouselWidget extends Widget
             throw new InvalidConfigException;
         }
 
-
         foreach ($this->items as $index => &$item) {
             if (isset($item['caption']) && $item['caption']) {
                 $item['content'] = Html::tag('div', $item['caption'] . Html::img($item['img'], $this->imgOptions));
@@ -156,13 +155,15 @@ class OwlCarouselWidget extends Widget
     protected function defaultClientOptions()
     {
         return [
-            'autoplay' => true,
-            'loop' => true,
-            'smartSpeed' => 500,
-            'navSpeed' => 1000,
-            'items' => 4,
-            'nav' => true,
-            'navText' => ["<span>prev <i class='fa fa-angle-left'></i></span>", "<span>next<i class='fa fa-angle-right'></i></span>"]
+//            'autoplay' => true,
+//            'loop' => true,
+//            'smartSpeed' => 500,
+//            'navSpeed' => 1000,
+            'items' => 1,
+            'singleItem' => true,
+//            'nav' => true,
+//            'navText' => ["<span>prev <i class='fa fa-angle-left'></i></span>", "<span>next<i class='fa fa-angle-right'></i></span>"],
+            'responsive' => true
         ];
     }
 
