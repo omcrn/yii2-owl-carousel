@@ -19,7 +19,7 @@ or add
 "omicronsoft/yii2-owl-carousel": "*"
 ```
 
-to the require section of your `composer.json` file.
+to the require section of your `composer.json` file and run `composer update`.
 
 
 Usage
