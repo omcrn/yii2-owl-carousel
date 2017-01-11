@@ -58,7 +58,7 @@ class OwlCarouselWidget extends Widget
 
 
         foreach ($this->items as $index => &$item) {
-            if (isset($item['caption']) && $item['content']) {
+            if (isset($item['caption']) && $item['caption']) {
                 $item['content'] = Html::tag('div', $item['caption'] . Html::img($item['img'], $this->imgOptions));
             }else if (isset($item['img'])) {
                 $item['content'] = Html::img($item['img'], $this->imgOptions);
