@@ -17,16 +17,17 @@ use yii\web\AssetBundle;
  */
 class OwlCarouselAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/owl.carousel/dist';
+    public $sourcePath = '@bower/owl.carousel1';
     public $js = [
-        'owl.carousel.min.js',
+        'owl-carousel/owl.carousel.' . (YII_DEBUG ? '' : 'min.') . 'js',
     ];
 
     public $css = [
-        'assets/owl.carousel.min.css',
+        'owl-carousel/owl.carousel.css',
+        'owl-carousel/owl.theme.css',
     ];
 
-    public $depends=[
+    public $depends = [
         'yii\web\JqueryAsset'
     ];
 
