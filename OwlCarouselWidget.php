@@ -30,11 +30,11 @@ class OwlCarouselWidget extends Widget
 
     public $itemView;
 
-    public $options;
+    public $options = ['class' => "owl-carousel"];
 
     public $separator = '';
 
-    public $itemOptions = [];
+    public $itemOptions = ['class' => 'item'];
 
     public $imgOptions = [];
 
